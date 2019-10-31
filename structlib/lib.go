@@ -1,0 +1,5 @@
+package structlib
+
+func PrintStruct() {
+
+}
