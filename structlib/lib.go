@@ -1,5 +1,0 @@
-package structlib
-
-func PrintStruct() {
-
-}
