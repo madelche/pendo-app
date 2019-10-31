@@ -17,3 +17,5 @@ func TestPrintStruct_InvalidArg(t *testing.T) {
 		t.Error("PrintStruct(string) failed, expected error")
 	}
 }
+
+// TODO: test that correct information is printed to console

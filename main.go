@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 
 	"github.com/madelche/pendo-app/printer"
@@ -14,18 +13,16 @@ func main() {
 		LastName string
 	}
 
-	//type Person struct{
-	//	Age int
-	//	Name Name
-	//}
+	type Person struct{
+		Age int
+		Name Name
+	}
 
 	n := Name{FirstName: "Bill", LastName: "Gates"}
-	//p := Person{Age: 55, Name: n}
+	p := Person{Age: 55, Name: n}
 
-	err := printer.PrintStruct(n)
+	err := printer.PrintStruct(p)
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	fmt.Println("huh")
 }
