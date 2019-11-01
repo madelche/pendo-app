@@ -10,11 +10,11 @@ func main() {
 
 	type Name struct {
 		FirstName string
-		LastName string
+		LastName  string
 	}
 
-	type Person struct{
-		Age int
+	type Person struct {
+		Age  int
 		Name Name
 	}
 
