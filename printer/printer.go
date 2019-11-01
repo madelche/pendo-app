@@ -83,6 +83,10 @@ func printField(name, tab string, value reflect.Value) (err error) {
 	return nil
 }
 
+//
+// Helpers for printing struct elements and formatting
+//
+
 func structName(name, tab string) {
 	fmt.Printf("%sObject of Class \"%s\"\n", tab, name)
 	fmt.Printf("%s--------------------------------\n", tab)
