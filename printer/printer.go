@@ -5,6 +5,10 @@ import (
 	"reflect"
 )
 
+// PrintStruct recurses over a struct to print its name, field names,
+// and values in a readable format.
+// Supports public attributes of the following types: booleans, strings,
+// numeric types, structs, arrays, slices, and maps.
 func PrintStruct(i interface{}) (err error) {
 	t := reflect.TypeOf(i)
 	if t == nil {
@@ -12,7 +16,7 @@ func PrintStruct(i interface{}) (err error) {
 		return err
 	}
 	if t.Kind() != reflect.Struct {
-		err = fmt.Errorf("error: expected type struct but received type %s", t.Name())
+		err = fmt.Errorf("error: expected type struct but received type %s", t.Kind().String())
 		return err
 	}
 
@@ -49,7 +53,7 @@ func printStructRec(i interface{}, tab string) (err error) {
 func printField(name, tab string, value reflect.Value) (err error) {
 	kind := value.Kind()
 	switch {
-	case isTypePrimitive(kind):
+	case isPrimitive(kind):
 		primitive(name, tab, value.Interface())
 	case kind == reflect.Struct:
 		header(kind, name, tab)

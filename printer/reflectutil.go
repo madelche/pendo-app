@@ -2,7 +2,7 @@ package printer
 
 import "reflect"
 
-func isTypePrimitive(kind reflect.Kind) bool {
+func isPrimitive(kind reflect.Kind) bool {
 	switch kind {
 	case reflect.String,
 		reflect.Bool,
